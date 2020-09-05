@@ -15,5 +15,9 @@ library(czso)
 ```
 
 ```{r}
+download.file("https://www.czso.cz/documents/62353418/123502927/030030-20data081020.zip", "x.zip")
+```
+
+```{r}
 czso_get_table("030030")
 ```
