@@ -10,3 +10,10 @@ title: "Selected Covid-19 data for Czech Republic"
 3*4
 ```
 
+```{r}
+library(czso)
+```
+
+```{r}
+czso_get_table("030030")
+```
