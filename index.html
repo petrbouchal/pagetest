@@ -340,10 +340,24 @@ $(document).ready(function () {
 <h2>Mortality statistics</h2>
 <pre class="r"><code>3*4</code></pre>
 <pre><code>## [1] 12</code></pre>
+<pre class="r"><code>library(czso)
+library(magrittr)
+library(httr)</code></pre>
+<pre class="r"><code># download.file(&quot;https://www.czso.cz/documents/62353418/123502927/030030-20data081020.zip&quot;, &quot;x.zip&quot;)</code></pre>
+<pre class="r"><code>GET(&quot;https://czso.cz&quot;) %&gt;% http_status()</code></pre>
+<pre><code>## $category
+## [1] &quot;Success&quot;
+## 
+## $reason
+## [1] &quot;OK&quot;
+## 
+## $message
+## [1] &quot;Success: (200) OK&quot;</code></pre>
+<pre class="r"><code># czso_get_table(&quot;030030&quot;)</code></pre>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwpgYGB7cn0KMyo0CmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwpgYGB7cn0KMyo0CmBgYAoKYGBge3J9CmxpYnJhcnkoY3pzbykKbGlicmFyeShtYWdyaXR0cikKbGlicmFyeShodHRyKQpgYGAKCgoKYGBge3J9CiMgZG93bmxvYWQuZmlsZSgiaHR0cHM6Ly93d3cuY3pzby5jei9kb2N1bWVudHMvNjIzNTM0MTgvMTIzNTAyOTI3LzAzMDAzMC0yMGRhdGEwODEwMjAuemlwIiwgInguemlwIikKYGBgCgpgYGB7cn0KR0VUKCJodHRwczovL2N6c28uY3oiKSAlPiUgaHR0cF9zdGF0dXMoKQpgYGAKCmBgYHtyfQojIGN6c29fZ2V0X3RhYmxlKCIwMzAwMzAiKQpgYGA=</div>
 
 
 
