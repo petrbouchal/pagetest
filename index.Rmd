@@ -77,7 +77,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 ptrr::set_ptrr_ggplot_fonts("IBM Plex Sans Condensed")
 ```
 
-```{r}
+```{r, dev = 'Cairo_png''}
 ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
   geom_text(aes(label = trans)) +
