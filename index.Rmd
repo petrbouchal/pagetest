@@ -6,14 +6,31 @@ title: "Selected Covid-19 data for Czech Republic"
 
 
 ## Mortality statistics
+
+```{r setup, include=F}
+library(czso)
+library(magrittr)
+library(httr)
+library(ggplot2)
+library(ragg)
+
+knitr::opts_chunk$set(echo = T, warning = T, dev = "ragg_png")
+```
+
+```{r}
+sfnts <- systemfonts::system_fonts()
+```
+
+```{r}
+sfnts[grepl("[Pp]lex", sfnts$family),c("family", "style", "italic", "monospace")]
+```
+
+
 ```{r}
 3*4
 ```
 
 ```{r}
-library(czso)
-library(magrittr)
-library(httr)
 ```
 
 
@@ -29,3 +46,13 @@ GET("https://czso.cz") %>% http_status()
 ```{r}
 # czso_get_table("030030")
 ```
+
+```{r, dev='ragg_png'}
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  theme(text = element_text(family = "IBM Plex Sans"),
+        plot.title = element_text(family = "IBM Plex Sans", face = "bold")) +
+  labs(title = "This is a title 1000999",
+       subtitle = "This is a subtitle 1000999")
+```
+
