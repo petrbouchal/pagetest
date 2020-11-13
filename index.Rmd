@@ -61,3 +61,25 @@ ggplot(mtcars, aes(mpg, wt)) +
        subtitle = "This is a subtitle 1000999")
 ```
 
+```{r}
+ptrr::set_ptrr_ggplot_fonts("IBM Plex Sans Condensed")
+```
+
+```{r}
+ggplot(mpg[1:10,], aes(cty, hwy)) +
+  geom_point() +
+  geom_text(aes(label = trans)) +
+  theme(text = element_text(family = "IBM Plex Sans"),
+        plot.title = element_text(family = "IBM Plex Sans", face = "bold")) +
+  labs(title = "This is a title 1000999",
+       subtitle = "This is a subtitle 1000999")
+```
+```{r}
+ggplot(mpg[1:10,], aes(cty, hwy)) +
+  geom_point() +
+  geom_text(aes(label = trans)) +
+  labs(title = "This is a title 1000999",
+       subtitle = "This is a subtitle 1000999") +
+  ptrr::theme_ptrr()
+```
+
