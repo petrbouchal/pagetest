@@ -47,6 +47,9 @@ sfnts[grepl("[Pp]lex", sfnts$family),c("family", "style", "italic", "monospace")
 ```{r}
 ```
 
+```{r}
+systemfonts::match_font("IBM Plex Sans")
+```
 
 
 ```{r}
