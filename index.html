@@ -26,6 +26,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -45,6 +47,15 @@
   })();
 </script>
 <!-- End Matomo Code -->
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -338,11 +349,17 @@ $(document).ready(function () {
 <h1></h1>
 <div id="mortality-statistics" class="section level2">
 <h2>Mortality statistics</h2>
+<pre class="r"><code>sfnts &lt;- systemfonts::system_fonts()</code></pre>
+<pre class="r"><code>&quot;hi&quot;</code></pre>
+<pre><code>## [1] &quot;hi&quot;</code></pre>
+<pre class="r"><code>sfnts[grepl(&quot;[Pp]lex&quot;, sfnts$family),c(&quot;family&quot;, &quot;style&quot;, &quot;italic&quot;, &quot;monospace&quot;)]</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["family"],"name":[1],"type":["chr"],"align":["left"]},{"label":["style"],"name":[2],"type":["chr"],"align":["left"]},{"label":["italic"],"name":[3],"type":["lgl"],"align":["right"]},{"label":["monospace"],"name":[4],"type":["lgl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <pre class="r"><code>3*4</code></pre>
 <pre><code>## [1] 12</code></pre>
-<pre class="r"><code>library(czso)
-library(magrittr)
-library(httr)</code></pre>
 <pre class="r"><code># download.file(&quot;https://www.czso.cz/documents/62353418/123502927/030030-20data081020.zip&quot;, &quot;x.zip&quot;)</code></pre>
 <pre class="r"><code>GET(&quot;https://czso.cz&quot;) %&gt;% http_status()</code></pre>
 <pre><code>## $category
@@ -354,10 +371,17 @@ library(httr)</code></pre>
 ## $message
 ## [1] &quot;Success: (200) OK&quot;</code></pre>
 <pre class="r"><code># czso_get_table(&quot;030030&quot;)</code></pre>
+<pre class="r"><code>ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  theme(text = element_text(family = &quot;IBM Plex Sans&quot;),
+        plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
+  labs(title = &quot;This is a title 1000999&quot;,
+       subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwpgYGB7cn0KMyo0CmBgYAoKYGBge3J9CmxpYnJhcnkoY3pzbykKbGlicmFyeShtYWdyaXR0cikKbGlicmFyeShodHRyKQpgYGAKCgoKYGBge3J9CiMgZG93bmxvYWQuZmlsZSgiaHR0cHM6Ly93d3cuY3pzby5jei9kb2N1bWVudHMvNjIzNTM0MTgvMTIzNTAyOTI3LzAzMDAzMC0yMGRhdGEwODEwMjAuemlwIiwgInguemlwIikKYGBgCgpgYGB7cn0KR0VUKCJodHRwczovL2N6c28uY3oiKSAlPiUgaHR0cF9zdGF0dXMoKQpgYGAKCmBgYHtyfQojIGN6c29fZ2V0X3RhYmxlKCIwMzAwMzAiKQpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9Rn0KbGlicmFyeShjenNvKQpsaWJyYXJ5KG1hZ3JpdHRyKQpsaWJyYXJ5KGh0dHIpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyYWdnKQoKa25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBULCB3YXJuaW5nID0gVCwgZGV2ID0gInJhZ2dfcG5nIikKYGBgCgpgYGB7cn0Kc2ZudHMgPC0gc3lzdGVtZm9udHM6OnN5c3RlbV9mb250cygpCmBgYAoKYGBge3J9CiJoaSIKYGBgCgoKYGBge3J9CnNmbnRzW2dyZXBsKCJbUHBdbGV4Iiwgc2ZudHMkZmFtaWx5KSxjKCJmYW1pbHkiLCAic3R5bGUiLCAiaXRhbGljIiwgIm1vbm9zcGFjZSIpXQpgYGAKCgpgYGB7cn0KMyo0CmBgYAoKYGBge3J9CmBgYAoKCgpgYGB7cn0KIyBkb3dubG9hZC5maWxlKCJodHRwczovL3d3dy5jenNvLmN6L2RvY3VtZW50cy82MjM1MzQxOC8xMjM1MDI5MjcvMDMwMDMwLTIwZGF0YTA4MTAyMC56aXAiLCAieC56aXAiKQpgYGAKCmBgYHtyfQpHRVQoImh0dHBzOi8vY3pzby5jeiIpICU+JSBodHRwX3N0YXR1cygpCmBgYAoKYGBge3J9CiMgY3pzb19nZXRfdGFibGUoIjAzMDAzMCIpCmBgYAoKYGBge3IsIGRldj0ncmFnZ19wbmcnfQpnZ3Bsb3QobXRjYXJzLCBhZXMobXBnLCB3dCkpICsKICBnZW9tX3BvaW50KCkgKwogIHRoZW1lKHRleHQgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiKSwKICAgICAgICBwbG90LnRpdGxlID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiwgZmFjZSA9ICJib2xkIikpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikKYGBgCgo=</div>
 
 
 
@@ -367,7 +391,7 @@ library(httr)</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
