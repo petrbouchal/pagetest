@@ -42,6 +42,11 @@ jobs:
         run: |
           R -e 'install.packages("renv")'
           R -e 'renv::restore()'
+      
+      - name: install fonts
+        run: |
+          brew tap homebrew/cask-fonts
+          brew cask install font-ibm-plex
 
       - name: Render Site
         run: |-
