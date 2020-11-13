@@ -25,6 +25,10 @@ sfnts <- systemfonts::system_fonts()
 "hi"
 ```
 
+```{r}
+sfnts
+```
+
 
 ```{r}
 sfnts[grepl("[Pp]lex", sfnts$family),c("family", "style", "italic", "monospace")]
