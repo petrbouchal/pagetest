@@ -39,7 +39,7 @@ systemfonts::register_font("IBM Plex Sans",
                                               "IBMPlexSans-Regular.ttf",
                                                package = "ptrr"),
                            bold = system.file("fonts", "plex", 
-                                              "IBMPlexSans-Bold",
+                                              "IBMPlexSans-Bold.ttf",
                                                package = "ptrr"))
 ```
 
