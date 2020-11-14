@@ -1,16 +1,14 @@
 ---
-title: "Selected Covid-19 data for Czech Republic"
+title: "Testing systemfonts/ragg on Github Actions"
 ---
 
 # {.tabset}
 
 
-## Mortality statistics
+## Heading
 
 ```{r setup, include=F}
-library(czso)
 library(magrittr)
-library(httr)
 library(ggplot2)
 library(ragg)
 
@@ -65,20 +63,9 @@ sfnts[grepl("[Pp]lex", sfnts$family),c("family", "style", "italic", "monospace")
 systemfonts::match_font("IBM Plex Sans")
 ```
 
+## Plain plot
 
 ```{r}
-# download.file("https://www.czso.cz/documents/62353418/123502927/030030-20data081020.zip", "x.zip")
-```
-
-```{r}
-GET("https://czso.cz") %>% http_status()
-```
-
-```{r}
-# czso_get_table("030030")
-```
-
-```{r, dev='ragg_png'}
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
   theme(text = element_text(family = "IBM Plex Sans"),
@@ -91,6 +78,8 @@ ggplot(mtcars, aes(mpg, wt)) +
 ptrr::set_ptrr_ggplot_fonts("IBM Plex Sans Condensed")
 ```
 
+## Test set fonts in geoms
+
 ```{r}
 ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
@@ -100,6 +89,9 @@ ggplot(mpg[1:10,], aes(cty, hwy)) +
   labs(title = "This is a title 1000999",
        subtitle = "This is a subtitle 1000999")
 ```
+
+## Test theme with fonts
+
 ```{r}
 ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
