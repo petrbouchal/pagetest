@@ -368,6 +368,15 @@ $(document).ready(function () {
 </div>
 <pre class="r"><code>3*4</code></pre>
 <pre><code>## [1] 12</code></pre>
+<pre class="r"><code>systemfonts::match_font(&quot;IBM Plex Sans&quot;)</code></pre>
+<pre><code>## $path
+## [1] &quot;/System/Library/Fonts/Helvetica.ttc&quot;
+## 
+## $index
+## [1] 0
+## 
+## $features
+## NULL</code></pre>
 <pre class="r"><code># download.file(&quot;https://www.czso.cz/documents/62353418/123502927/030030-20data081020.zip&quot;, &quot;x.zip&quot;)</code></pre>
 <pre class="r"><code>GET(&quot;https://czso.cz&quot;) %&gt;% http_status()</code></pre>
 <pre><code>## $category
@@ -385,7 +394,7 @@ $(document).ready(function () {
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre class="r"><code>ptrr::set_ptrr_ggplot_fonts(&quot;IBM Plex Sans Condensed&quot;)</code></pre>
 <pre class="r"><code>ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
@@ -394,18 +403,18 @@ $(document).ready(function () {
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <pre class="r"><code>ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
   geom_text(aes(label = trans)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;) +
   ptrr::theme_ptrr()</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9Rn0KbGlicmFyeShjenNvKQpsaWJyYXJ5KG1hZ3JpdHRyKQpsaWJyYXJ5KGh0dHIpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyYWdnKQoKa25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBULCB3YXJuaW5nID0gVCwgZGV2ID0gInJhZ2dfcG5nIikKYGBgCgpgYGB7cn0Kc2ZudHMgPC0gc3lzdGVtZm9udHM6OnN5c3RlbV9mb250cygpCmBgYAoKYGBge3J9CiJoaSIKYGBgCgpgYGB7cn0Kc2ZudHMKYGBgCgpgYGB7cn0KbGlicmFyeShleHRyYWZvbnQpCmBgYAoKCgpgYGB7cn0Kc2ZudHNbZ3JlcGwoIltQcF1sZXgiLCBzZm50cyRmYW1pbHkpLGMoImZhbWlseSIsICJzdHlsZSIsICJpdGFsaWMiLCAibW9ub3NwYWNlIildCmBgYAoKCmBgYHtyfQozKjQKYGBgCgpgYGB7cn0KYGBgCgoKCmBgYHtyfQojIGRvd25sb2FkLmZpbGUoImh0dHBzOi8vd3d3LmN6c28uY3ovZG9jdW1lbnRzLzYyMzUzNDE4LzEyMzUwMjkyNy8wMzAwMzAtMjBkYXRhMDgxMDIwLnppcCIsICJ4LnppcCIpCmBgYAoKYGBge3J9CkdFVCgiaHR0cHM6Ly9jenNvLmN6IikgJT4lIGh0dHBfc3RhdHVzKCkKYGBgCgpgYGB7cn0KIyBjenNvX2dldF90YWJsZSgiMDMwMDMwIikKYGBgCgpgYGB7ciwgZGV2PSdyYWdnX3BuZyd9CmdncGxvdChtdGNhcnMsIGFlcyhtcGcsIHd0KSkgKwogIGdlb21fcG9pbnQoKSArCiAgdGhlbWUodGV4dCA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIpLAogICAgICAgIHBsb3QudGl0bGUgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiLCBmYWNlID0gImJvbGQiKSkgKwogIGxhYnModGl0bGUgPSAiVGhpcyBpcyBhIHRpdGxlIDEwMDA5OTkiLAogICAgICAgc3VidGl0bGUgPSAiVGhpcyBpcyBhIHN1YnRpdGxlIDEwMDA5OTkiKQpgYGAKCmBgYHtyfQpwdHJyOjpzZXRfcHRycl9nZ3Bsb3RfZm9udHMoIklCTSBQbGV4IFNhbnMgQ29uZGVuc2VkIikKYGBgCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYApgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikgKwogIHB0cnI6OnRoZW1lX3B0cnIoKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9Rn0KbGlicmFyeShjenNvKQpsaWJyYXJ5KG1hZ3JpdHRyKQpsaWJyYXJ5KGh0dHIpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyYWdnKQoKa25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBULCB3YXJuaW5nID0gVCwgZGV2ID0gInJhZ2dfcG5nIikKYGBgCgpgYGB7cn0Kc2ZudHMgPC0gc3lzdGVtZm9udHM6OnN5c3RlbV9mb250cygpCmBgYAoKYGBge3J9CiJoaSIKYGBgCgpgYGB7cn0Kc2ZudHMKYGBgCgpgYGB7cn0KbGlicmFyeShleHRyYWZvbnQpCmBgYAoKCgpgYGB7cn0Kc2ZudHNbZ3JlcGwoIltQcF1sZXgiLCBzZm50cyRmYW1pbHkpLGMoImZhbWlseSIsICJzdHlsZSIsICJpdGFsaWMiLCAibW9ub3NwYWNlIildCmBgYAoKCmBgYHtyfQozKjQKYGBgCgpgYGB7cn0KYGBgCgpgYGB7cn0Kc3lzdGVtZm9udHM6Om1hdGNoX2ZvbnQoIklCTSBQbGV4IFNhbnMiKQpgYGAKCgpgYGB7cn0KIyBkb3dubG9hZC5maWxlKCJodHRwczovL3d3dy5jenNvLmN6L2RvY3VtZW50cy82MjM1MzQxOC8xMjM1MDI5MjcvMDMwMDMwLTIwZGF0YTA4MTAyMC56aXAiLCAieC56aXAiKQpgYGAKCmBgYHtyfQpHRVQoImh0dHBzOi8vY3pzby5jeiIpICU+JSBodHRwX3N0YXR1cygpCmBgYAoKYGBge3J9CiMgY3pzb19nZXRfdGFibGUoIjAzMDAzMCIpCmBgYAoKYGBge3IsIGRldj0ncmFnZ19wbmcnfQpnZ3Bsb3QobXRjYXJzLCBhZXMobXBnLCB3dCkpICsKICBnZW9tX3BvaW50KCkgKwogIHRoZW1lKHRleHQgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiKSwKICAgICAgICBwbG90LnRpdGxlID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiwgZmFjZSA9ICJib2xkIikpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikKYGBgCgpgYGB7cn0KcHRycjo6c2V0X3B0cnJfZ2dwbG90X2ZvbnRzKCJJQk0gUGxleCBTYW5zIENvbmRlbnNlZCIpCmBgYAoKYGBge3J9CmdncGxvdChtcGdbMToxMCxdLCBhZXMoY3R5LCBod3kpKSArCiAgZ2VvbV9wb2ludCgpICsKICBnZW9tX3RleHQoYWVzKGxhYmVsID0gdHJhbnMpKSArCiAgdGhlbWUodGV4dCA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIpLAogICAgICAgIHBsb3QudGl0bGUgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiLCBmYWNlID0gImJvbGQiKSkgKwogIGxhYnModGl0bGUgPSAiVGhpcyBpcyBhIHRpdGxlIDEwMDA5OTkiLAogICAgICAgc3VidGl0bGUgPSAiVGhpcyBpcyBhIHN1YnRpdGxlIDEwMDA5OTkiKQpgYGAKYGBge3J9CmdncGxvdChtcGdbMToxMCxdLCBhZXMoY3R5LCBod3kpKSArCiAgZ2VvbV9wb2ludCgpICsKICBnZW9tX3RleHQoYWVzKGxhYmVsID0gdHJhbnMpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpICsKICBwdHJyOjp0aGVtZV9wdHJyKCkKYGBgCgo=</div>
 
 
 
