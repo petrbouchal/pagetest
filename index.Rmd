@@ -14,7 +14,7 @@ library(httr)
 library(ggplot2)
 library(ragg)
 
-knitr::opts_chunk$set(echo = T, warning = T)
+knitr::opts_chunk$set(echo = T, warning = T, dev = "ragg_png")
 ```
 
 ```{r}
