@@ -30,7 +30,21 @@ sfnts
 ```
 
 ```{r}
-library(extrafont)
+systemfonts::register_font("IBM Plex Sans Condensed", 
+                           plain = system.file("fonts", "plex",
+                                               "IBMPlexSansCondensed-Regular.ttf",
+                                               package = "ptrr"))
+systemfonts::register_font("IBM Plex Sans", 
+                           plain = system.file("fonts", "plex", 
+                                              "IBMPlexSans-Regular.ttf",
+                                               package = "ptrr"),
+                           bold = system.file("fonts", "plex", 
+                                              "IBMPlexSans-Bold",
+                                               package = "ptrr"))
+```
+
+```{r}
+systemfonts::registry_fonts()
 ```
 
 
