@@ -11,7 +11,7 @@
 
 
 
-<title>Selected Covid-19 data for Czech Republic</title>
+<title>Testing systemfonts/ragg on Github Actions</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -340,15 +340,15 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Selected Covid-19 data for Czech Republic</h1>
+<h1 class="title toc-ignore">Testing systemfonts/ragg on Github Actions</h1>
 
 </div>
 
 
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="mortality-statistics" class="section level2">
-<h2>Mortality statistics</h2>
+<div id="heading" class="section level2">
+<h2>Heading</h2>
 <pre class="r"><code>sfnts &lt;- systemfonts::system_fonts()</code></pre>
 <pre class="r"><code>&quot;hi&quot;</code></pre>
 <pre><code>## [1] &quot;hi&quot;</code></pre>
@@ -392,25 +392,20 @@ systemfonts::register_font(&quot;IBM Plex Sans&quot;,
 ## 
 ## $features
 ## NULL</code></pre>
-<pre class="r"><code># download.file(&quot;https://www.czso.cz/documents/62353418/123502927/030030-20data081020.zip&quot;, &quot;x.zip&quot;)</code></pre>
-<pre class="r"><code>GET(&quot;https://czso.cz&quot;) %&gt;% http_status()</code></pre>
-<pre><code>## $category
-## [1] &quot;Success&quot;
-## 
-## $reason
-## [1] &quot;OK&quot;
-## 
-## $message
-## [1] &quot;Success: (200) OK&quot;</code></pre>
-<pre class="r"><code># czso_get_table(&quot;030030&quot;)</code></pre>
+</div>
+<div id="plain-plot" class="section level2">
+<h2>Plain plot</h2>
 <pre class="r"><code>ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
   theme(text = element_text(family = &quot;IBM Plex Sans&quot;),
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>ptrr::set_ptrr_ggplot_fonts(&quot;IBM Plex Sans Condensed&quot;)</code></pre>
+</div>
+<div id="test-set-fonts-in-geoms" class="section level2">
+<h2>Test set fonts in geoms</h2>
 <pre class="r"><code>ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
   geom_text(aes(label = trans)) +
@@ -418,18 +413,21 @@ systemfonts::register_font(&quot;IBM Plex Sans&quot;,
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="test-theme-with-fonts" class="section level2">
+<h2>Test theme with fonts</h2>
 <pre class="r"><code>ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
   geom_text(aes(label = trans)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;) +
   ptrr::theme_ptrr()</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2VsZWN0ZWQgQ292aWQtMTkgZGF0YSBmb3IgQ3plY2ggUmVwdWJsaWMiCi0tLQoKIyB7LnRhYnNldH0KCgojIyBNb3J0YWxpdHkgc3RhdGlzdGljcwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9Rn0KbGlicmFyeShjenNvKQpsaWJyYXJ5KG1hZ3JpdHRyKQpsaWJyYXJ5KGh0dHIpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyYWdnKQoKa25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBULCB3YXJuaW5nID0gVCwgZGV2ID0gInJhZ2dfcG5nIikKYGBgCgpgYGB7cn0Kc2ZudHMgPC0gc3lzdGVtZm9udHM6OnN5c3RlbV9mb250cygpCmBgYAoKYGBge3J9CiJoaSIKYGBgCgpgYGB7cn0Kc2ZudHMKYGBgCgpgYGB7cn0Kc3lzdGVtZm9udHM6OnJlZ2lzdGVyX2ZvbnQoIklCTSBQbGV4IFNhbnMgQ29uZGVuc2VkIiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIHBsYWluID0gc3lzdGVtLmZpbGUoImZvbnRzIiwgInBsZXgiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJJQk1QbGV4U2Fuc0NvbmRlbnNlZC1SZWd1bGFyLnR0ZiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFja2FnZSA9ICJwdHJyIikpCnN5c3RlbWZvbnRzOjpyZWdpc3Rlcl9mb250KCJJQk0gUGxleCBTYW5zIiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIHBsYWluID0gc3lzdGVtLmZpbGUoImZvbnRzIiwgInBsZXgiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJJQk1QbGV4U2Fucy1SZWd1bGFyLnR0ZiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFja2FnZSA9ICJwdHJyIiksCiAgICAgICAgICAgICAgICAgICAgICAgICAgIGJvbGQgPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zLUJvbGQudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSkKYGBgCgpgYGB7cn0Kc3lzdGVtZm9udHM6OnJlZ2lzdHJ5X2ZvbnRzKCkKYGBgCgoKCmBgYHtyfQpzZm50c1tncmVwbCgiW1BwXWxleCIsIHNmbnRzJGZhbWlseSksYygiZmFtaWx5IiwgInN0eWxlIiwgIml0YWxpYyIsICJtb25vc3BhY2UiKV0KYGBgCgoKYGBge3J9CjMqNApgYGAKCmBgYHtyfQpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6bWF0Y2hfZm9udCgiSUJNIFBsZXggU2FucyIpCmBgYAoKCmBgYHtyfQojIGRvd25sb2FkLmZpbGUoImh0dHBzOi8vd3d3LmN6c28uY3ovZG9jdW1lbnRzLzYyMzUzNDE4LzEyMzUwMjkyNy8wMzAwMzAtMjBkYXRhMDgxMDIwLnppcCIsICJ4LnppcCIpCmBgYAoKYGBge3J9CkdFVCgiaHR0cHM6Ly9jenNvLmN6IikgJT4lIGh0dHBfc3RhdHVzKCkKYGBgCgpgYGB7cn0KIyBjenNvX2dldF90YWJsZSgiMDMwMDMwIikKYGBgCgpgYGB7ciwgZGV2PSdyYWdnX3BuZyd9CmdncGxvdChtdGNhcnMsIGFlcyhtcGcsIHd0KSkgKwogIGdlb21fcG9pbnQoKSArCiAgdGhlbWUodGV4dCA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIpLAogICAgICAgIHBsb3QudGl0bGUgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiLCBmYWNlID0gImJvbGQiKSkgKwogIGxhYnModGl0bGUgPSAiVGhpcyBpcyBhIHRpdGxlIDEwMDA5OTkiLAogICAgICAgc3VidGl0bGUgPSAiVGhpcyBpcyBhIHN1YnRpdGxlIDEwMDA5OTkiKQpgYGAKCmBgYHtyfQpwdHJyOjpzZXRfcHRycl9nZ3Bsb3RfZm9udHMoIklCTSBQbGV4IFNhbnMgQ29uZGVuc2VkIikKYGBgCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYApgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikgKwogIHB0cnI6OnRoZW1lX3B0cnIoKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiVGVzdGluZyBzeXN0ZW1mb250cy9yYWdnIG9uIEdpdGh1YiBBY3Rpb25zIgotLS0KCiMgey50YWJzZXR9CgoKIyMgSGVhZGluZwoKYGBge3Igc2V0dXAsIGluY2x1ZGU9Rn0KbGlicmFyeShtYWdyaXR0cikKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KHJhZ2cpCgprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFQsIHdhcm5pbmcgPSBULCBkZXYgPSAicmFnZ19wbmciKQpgYGAKCmBgYHtyfQpzZm50cyA8LSBzeXN0ZW1mb250czo6c3lzdGVtX2ZvbnRzKCkKYGBgCgpgYGB7cn0KImhpIgpgYGAKCmBgYHtyfQpzZm50cwpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0ZXJfZm9udCgiSUJNIFBsZXggU2FucyBDb25kZW5zZWQiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhaW4gPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zQ29uZGVuc2VkLVJlZ3VsYXIudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSkKc3lzdGVtZm9udHM6OnJlZ2lzdGVyX2ZvbnQoIklCTSBQbGV4IFNhbnMiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhaW4gPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zLVJlZ3VsYXIudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9sZCA9IHN5c3RlbS5maWxlKCJmb250cyIsICJwbGV4IiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiSUJNUGxleFNhbnMtQm9sZC50dGYiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhY2thZ2UgPSAicHRyciIpKQpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0cnlfZm9udHMoKQpgYGAKCgoKYGBge3J9CnNmbnRzW2dyZXBsKCJbUHBdbGV4Iiwgc2ZudHMkZmFtaWx5KSxjKCJmYW1pbHkiLCAic3R5bGUiLCAiaXRhbGljIiwgIm1vbm9zcGFjZSIpXQpgYGAKCgpgYGB7cn0KMyo0CmBgYAoKYGBge3J9CmBgYAoKYGBge3J9CnN5c3RlbWZvbnRzOjptYXRjaF9mb250KCJJQk0gUGxleCBTYW5zIikKYGBgCgojIyBQbGFpbiBwbG90CgpgYGB7cn0KZ2dwbG90KG10Y2FycywgYWVzKG1wZywgd3QpKSArCiAgZ2VvbV9wb2ludCgpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYAoKYGBge3J9CnB0cnI6OnNldF9wdHJyX2dncGxvdF9mb250cygiSUJNIFBsZXggU2FucyBDb25kZW5zZWQiKQpgYGAKCiMjIFRlc3Qgc2V0IGZvbnRzIGluIGdlb21zCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYAoKIyMgVGVzdCB0aGVtZSB3aXRoIGZvbnRzCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikgKwogIHB0cnI6OnRoZW1lX3B0cnIoKQpgYGAKCg==</div>
 
 
 
@@ -466,7 +464,7 @@ $(document).ready(function () {
 <script>
 $(document).ready(function () {
   window.initializeSourceEmbed("index.Rmd");
-  window.initializeCodeFolding("hide" === "show");
+  window.initializeCodeFolding("show" === "show");
 });
 </script>
 
