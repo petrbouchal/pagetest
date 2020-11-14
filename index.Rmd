@@ -110,3 +110,14 @@ ggplot(mpg[1:10,], aes(cty, hwy)) +
   ptrr::theme_ptrr()
 ```
 
+## Test loading font from user library path
+
+```{r}
+systemfonts::register_font("IBM Plex Sans Condensed 2", 
+                           plain = '/Users/runner/Library/Fonts/IBMPlexMono-ExtraLightItalic.otf')
+```
+
+```{r}
+systemfonts::registry_fonts()
+```
+
