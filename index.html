@@ -351,13 +351,30 @@ $(document).ready(function () {
 <h1></h1>
 <div id="without-register_font" class="section level2">
 <h2>Without <code>register_font()</code></h2>
+<pre class="r"><code>Sys.info()</code></pre>
+<pre><code>##                                                                                              sysname 
+##                                                                                             &quot;Darwin&quot; 
+##                                                                                              release 
+##                                                                                             &quot;19.6.0&quot; 
+##                                                                                              version 
+## &quot;Darwin Kernel Version 19.6.0: Thu Oct 29 22:56:45 PDT 2020; root:xnu-6153.141.2.2~1/RELEASE_X86_64&quot; 
+##                                                                                             nodename 
+##                                                                            &quot;Mac-1605513503965.local&quot; 
+##                                                                                              machine 
+##                                                                                             &quot;x86_64&quot; 
+##                                                                                                login 
+##                                                                                               &quot;root&quot; 
+##                                                                                                 user 
+##                                                                                             &quot;runner&quot; 
+##                                                                                       effective_user 
+##                                                                                             &quot;runner&quot;</code></pre>
 <pre class="r"><code>ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
   theme(text = element_text(family = &quot;IBM Plex Sans&quot;),
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="r"><code>sfnts &lt;- systemfonts::system_fonts()</code></pre>
 <pre class="r"><code>&quot;hi&quot;</code></pre>
 <pre><code>## [1] &quot;hi&quot;</code></pre>
@@ -410,7 +427,7 @@ systemfonts::register_font(&quot;IBM Plex Sans&quot;,
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <pre class="r"><code>ptrr::set_ptrr_ggplot_fonts(&quot;IBM Plex Sans Condensed&quot;)</code></pre>
 </div>
 <div id="test-set-fonts-in-geoms" class="section level2">
@@ -422,7 +439,7 @@ systemfonts::register_font(&quot;IBM Plex Sans&quot;,
         plot.title = element_text(family = &quot;IBM Plex Sans&quot;, face = &quot;bold&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="test-theme-with-fonts" class="section level2">
 <h2>Test theme with fonts</h2>
@@ -432,7 +449,7 @@ systemfonts::register_font(&quot;IBM Plex Sans&quot;,
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;) +
   ptrr::theme_ptrr()</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="test-loading-font-from-user-library-path" class="section level2">
 <h2>Test loading font from user library path</h2>
@@ -450,11 +467,11 @@ systemfonts::register_font(&quot;IBM Plex Sans&quot;,
         plot.title = element_text(family = &quot;IBM Plex Sans Condensed 2&quot;)) +
   labs(title = &quot;This is a title 1000999&quot;,
        subtitle = &quot;This is a subtitle 1000999&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiVGVzdGluZyBzeXN0ZW1mb250cy9yYWdnIG9uIEdpdGh1YiBBY3Rpb25zIgotLS0KCmBgYHtyfQpnZXR3ZCgpCmBgYAoKIyB7LnRhYnNldH0KCgojIyBXaXRob3V0IGByZWdpc3Rlcl9mb250KClgCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GfQpsaWJyYXJ5KG1hZ3JpdHRyKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkocmFnZykKCmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVCwgd2FybmluZyA9IFQsIGRldiA9ICJyYWdnX3BuZyIpCmBgYAoKYGBge3J9CmdncGxvdChtdGNhcnMsIGFlcyhtcGcsIHd0KSkgKwogIGdlb21fcG9pbnQoKSArCiAgdGhlbWUodGV4dCA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIpLAogICAgICAgIHBsb3QudGl0bGUgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiLCBmYWNlID0gImJvbGQiKSkgKwogIGxhYnModGl0bGUgPSAiVGhpcyBpcyBhIHRpdGxlIDEwMDA5OTkiLAogICAgICAgc3VidGl0bGUgPSAiVGhpcyBpcyBhIHN1YnRpdGxlIDEwMDA5OTkiKQpgYGAKCmBgYHtyfQpzZm50cyA8LSBzeXN0ZW1mb250czo6c3lzdGVtX2ZvbnRzKCkKYGBgCgpgYGB7cn0KImhpIgpgYGAKCmBgYHtyfQpzZm50cwpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0ZXJfZm9udCgiSUJNIFBsZXggU2FucyBDb25kZW5zZWQiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhaW4gPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zQ29uZGVuc2VkLVJlZ3VsYXIudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSkKc3lzdGVtZm9udHM6OnJlZ2lzdGVyX2ZvbnQoIklCTSBQbGV4IFNhbnMiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhaW4gPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zLVJlZ3VsYXIudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9sZCA9IHN5c3RlbS5maWxlKCJmb250cyIsICJwbGV4IiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiSUJNUGxleFNhbnMtQm9sZC50dGYiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhY2thZ2UgPSAicHRyciIpKQpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0cnlfZm9udHMoKQpgYGAKCgoKYGBge3J9CnNmbnRzW2dyZXBsKCJbUHBdbGV4Iiwgc2ZudHMkZmFtaWx5KSxjKCJmYW1pbHkiLCAic3R5bGUiLCAiaXRhbGljIiwgIm1vbm9zcGFjZSIpXQpgYGAKCgpgYGB7cn0KMyo0CmBgYAoKYGBge3J9CmBgYAoKYGBge3J9CnN5c3RlbWZvbnRzOjptYXRjaF9mb250KCJJQk0gUGxleCBTYW5zIikKYGBgCgojIyBQbGFpbiBwbG90CgpgYGB7cn0KZ2dwbG90KG10Y2FycywgYWVzKG1wZywgd3QpKSArCiAgZ2VvbV9wb2ludCgpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYAoKYGBge3J9CnB0cnI6OnNldF9wdHJyX2dncGxvdF9mb250cygiSUJNIFBsZXggU2FucyBDb25kZW5zZWQiKQpgYGAKCiMjIFRlc3Qgc2V0IGZvbnRzIGluIGdlb21zCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYAoKIyMgVGVzdCB0aGVtZSB3aXRoIGZvbnRzCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikgKwogIHB0cnI6OnRoZW1lX3B0cnIoKQpgYGAKCiMjIFRlc3QgbG9hZGluZyBmb250IGZyb20gdXNlciBsaWJyYXJ5IHBhdGgKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0ZXJfZm9udCgiSUJNIFBsZXggU2FucyBDb25kZW5zZWQgMiIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICBwbGFpbiA9ICcvVXNlcnMvcnVubmVyL0xpYnJhcnkvRm9udHMvSUJNUGxleFNhbnNDb25kZW5zZWQtUmVndWxhci5vdGYnKQpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0cnlfZm9udHMoKQpgYGAKCmBgYHtyfQpnZ3Bsb3QobXRjYXJzLCBhZXMobXBnLCB3dCkpICsKICBnZW9tX3BvaW50KCkgKwogIHRoZW1lKHRleHQgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMgQ29uZGVuc2VkIDIiKSwKICAgICAgICBwbG90LnRpdGxlID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIENvbmRlbnNlZCAyIikpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikKYGBgCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiVGVzdGluZyBzeXN0ZW1mb250cy9yYWdnIG9uIEdpdGh1YiBBY3Rpb25zIgotLS0KCmBgYHtyfQpnZXR3ZCgpCmBgYAoKIyB7LnRhYnNldH0KCgojIyBXaXRob3V0IGByZWdpc3Rlcl9mb250KClgCgpgYGB7cn0KU3lzLmluZm8oKQpgYGAKCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GfQpsaWJyYXJ5KG1hZ3JpdHRyKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkocmFnZykKCmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVCwgd2FybmluZyA9IFQsIGRldiA9ICJyYWdnX3BuZyIpCmBgYAoKYGBge3J9CmdncGxvdChtdGNhcnMsIGFlcyhtcGcsIHd0KSkgKwogIGdlb21fcG9pbnQoKSArCiAgdGhlbWUodGV4dCA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIpLAogICAgICAgIHBsb3QudGl0bGUgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMiLCBmYWNlID0gImJvbGQiKSkgKwogIGxhYnModGl0bGUgPSAiVGhpcyBpcyBhIHRpdGxlIDEwMDA5OTkiLAogICAgICAgc3VidGl0bGUgPSAiVGhpcyBpcyBhIHN1YnRpdGxlIDEwMDA5OTkiKQpgYGAKCmBgYHtyfQpzZm50cyA8LSBzeXN0ZW1mb250czo6c3lzdGVtX2ZvbnRzKCkKYGBgCgpgYGB7cn0KImhpIgpgYGAKCmBgYHtyfQpzZm50cwpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0ZXJfZm9udCgiSUJNIFBsZXggU2FucyBDb25kZW5zZWQiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhaW4gPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zQ29uZGVuc2VkLVJlZ3VsYXIudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSkKc3lzdGVtZm9udHM6OnJlZ2lzdGVyX2ZvbnQoIklCTSBQbGV4IFNhbnMiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhaW4gPSBzeXN0ZW0uZmlsZSgiZm9udHMiLCAicGxleCIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIklCTVBsZXhTYW5zLVJlZ3VsYXIudHRmIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWNrYWdlID0gInB0cnIiKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9sZCA9IHN5c3RlbS5maWxlKCJmb250cyIsICJwbGV4IiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiSUJNUGxleFNhbnMtQm9sZC50dGYiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhY2thZ2UgPSAicHRyciIpKQpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0cnlfZm9udHMoKQpgYGAKCgoKYGBge3J9CnNmbnRzW2dyZXBsKCJbUHBdbGV4Iiwgc2ZudHMkZmFtaWx5KSxjKCJmYW1pbHkiLCAic3R5bGUiLCAiaXRhbGljIiwgIm1vbm9zcGFjZSIpXQpgYGAKCgpgYGB7cn0KMyo0CmBgYAoKYGBge3J9CmBgYAoKYGBge3J9CnN5c3RlbWZvbnRzOjptYXRjaF9mb250KCJJQk0gUGxleCBTYW5zIikKYGBgCgojIyBQbGFpbiBwbG90CgpgYGB7cn0KZ2dwbG90KG10Y2FycywgYWVzKG1wZywgd3QpKSArCiAgZ2VvbV9wb2ludCgpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYAoKYGBge3J9CnB0cnI6OnNldF9wdHJyX2dncGxvdF9mb250cygiSUJNIFBsZXggU2FucyBDb25kZW5zZWQiKQpgYGAKCiMjIFRlc3Qgc2V0IGZvbnRzIGluIGdlb21zCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICB0aGVtZSh0ZXh0ID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIiksCiAgICAgICAgcGxvdC50aXRsZSA9IGVsZW1lbnRfdGV4dChmYW1pbHkgPSAiSUJNIFBsZXggU2FucyIsIGZhY2UgPSAiYm9sZCIpKSArCiAgbGFicyh0aXRsZSA9ICJUaGlzIGlzIGEgdGl0bGUgMTAwMDk5OSIsCiAgICAgICBzdWJ0aXRsZSA9ICJUaGlzIGlzIGEgc3VidGl0bGUgMTAwMDk5OSIpCmBgYAoKIyMgVGVzdCB0aGVtZSB3aXRoIGZvbnRzCgpgYGB7cn0KZ2dwbG90KG1wZ1sxOjEwLF0sIGFlcyhjdHksIGh3eSkpICsKICBnZW9tX3BvaW50KCkgKwogIGdlb21fdGV4dChhZXMobGFiZWwgPSB0cmFucykpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikgKwogIHB0cnI6OnRoZW1lX3B0cnIoKQpgYGAKCiMjIFRlc3QgbG9hZGluZyBmb250IGZyb20gdXNlciBsaWJyYXJ5IHBhdGgKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0ZXJfZm9udCgiSUJNIFBsZXggU2FucyBDb25kZW5zZWQgMiIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICBwbGFpbiA9ICcvVXNlcnMvcnVubmVyL0xpYnJhcnkvRm9udHMvSUJNUGxleFNhbnNDb25kZW5zZWQtUmVndWxhci5vdGYnKQpgYGAKCmBgYHtyfQpzeXN0ZW1mb250czo6cmVnaXN0cnlfZm9udHMoKQpgYGAKCmBgYHtyfQpnZ3Bsb3QobXRjYXJzLCBhZXMobXBnLCB3dCkpICsKICBnZW9tX3BvaW50KCkgKwogIHRoZW1lKHRleHQgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gIklCTSBQbGV4IFNhbnMgQ29uZGVuc2VkIDIiKSwKICAgICAgICBwbG90LnRpdGxlID0gZWxlbWVudF90ZXh0KGZhbWlseSA9ICJJQk0gUGxleCBTYW5zIENvbmRlbnNlZCAyIikpICsKICBsYWJzKHRpdGxlID0gIlRoaXMgaXMgYSB0aXRsZSAxMDAwOTk5IiwKICAgICAgIHN1YnRpdGxlID0gIlRoaXMgaXMgYSBzdWJ0aXRsZSAxMDAwOTk5IikKYGBgCg==</div>
 
 
 
