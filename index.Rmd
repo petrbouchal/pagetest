@@ -6,8 +6,15 @@ title: "Testing systemfonts/ragg on Github Actions"
 getwd()
 ```
 
-# {.tabset}
+```{r setup, include=F}
+library(magrittr)
+library(ggplot2)
+library(ragg)
 
+knitr::opts_chunk$set(echo = T, warning = T, dev = "ragg_png")
+```
+
+# {.tabset}
 
 ## Without `register_font()`
 
@@ -16,13 +23,7 @@ Sys.info()
 ```
 
 
-```{r setup, include=F}
-library(magrittr)
-library(ggplot2)
-library(ragg)
 
-knitr::opts_chunk$set(echo = T, warning = T, dev = "ragg_png")
-```
 
 ```{r}
 ggplot(mtcars, aes(mpg, wt)) +
