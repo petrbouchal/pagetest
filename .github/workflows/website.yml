@@ -42,7 +42,7 @@ jobs:
           brew install harfbuzz fribidi
           brew tap homebrew/cask-fonts
           brew cask install font-ibm-plex
-          brew cask install font-roboto
+          brew cask install font-jetbrains-mono
           system_profiler SPFontsDataType
 
       - name: Install packages
