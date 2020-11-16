@@ -42,6 +42,7 @@ jobs:
           brew install harfbuzz fribidi
           brew tap homebrew/cask-fonts
           brew cask install font-ibm-plex
+          system_profiler SPFontsDataType
 
       - name: Install packages
         env: 
