@@ -123,7 +123,7 @@ ggplot(mpg[1:10,], aes(cty, hwy)) +
 
 ```{r}
 systemfonts::register_font("IBM Plex Sans Condensed 2", 
-                           plain = '/Users/runner/Library/Fonts/IBMPlexSansCondensed-Regular.otf')
+                           plain = '~/Library/Fonts/IBMPlexSansCondensed-Regular.otf')
 ```
 
 ```{r}
