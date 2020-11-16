@@ -22,9 +22,6 @@ knitr::opts_chunk$set(echo = T, warning = T, dev = "ragg_png")
 Sys.info()
 ```
 
-```{r}
-systemfonts::reset_font_cache()
-```
 
 
 
