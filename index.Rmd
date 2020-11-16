@@ -66,7 +66,7 @@ systemfonts::registry_fonts()
 
 
 ```{r}
-sfnts[grepl("[Pp]lex", sfnts$family),c("family", "style", "italic", "monospace")]
+sfnts[grepl("([Pp]lex)|(Roboto)", sfnts$family),c("family", "style", "italic", "monospace")]
 ```
 
 
@@ -124,6 +124,8 @@ ggplot(mpg[1:10,], aes(cty, hwy)) +
 ```{r}
 systemfonts::register_font("IBM Plex Sans Condensed 2", 
                            plain = '/Users/runner/Library/Fonts/IBMPlexSansCondensed-Regular.otf')
+systemfonts::register_font("Roboto 2", 
+                           plain = '/Users/runner/Library/Fonts/Roboto-Regular.otf')
 ```
 
 ```{r}
@@ -133,8 +135,8 @@ systemfonts::registry_fonts()
 ```{r}
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
-  theme(text = element_text(family = "IBM Plex Sans Condensed 2"),
-        plot.title = element_text(family = "IBM Plex Sans Condensed 2")) +
+  theme(text = element_text(family = "Roboto 2"),
+        plot.title = element_text(family = "Roboto 2")) +
   labs(title = "This is a title 1000999",
        subtitle = "This is a subtitle 1000999")
 ```
