@@ -11,6 +11,11 @@ getwd()
 
 ## Without `register_font()`
 
+```{r}
+Sys.info()
+```
+
+
 ```{r setup, include=F}
 library(magrittr)
 library(ggplot2)
