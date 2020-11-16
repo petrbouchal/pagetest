@@ -2,6 +2,10 @@
 title: "Testing systemfonts/ragg on Github Actions"
 ---
 
+```{r}
+getwd()
+```
+
 # {.tabset}
 
 
