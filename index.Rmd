@@ -46,6 +46,8 @@ sfnts <- systemfonts::system_fonts()
 sfnts
 ```
 
+## Plain plot
+
 ```{r}
 systemfonts::register_font("IBM Plex Sans Condensed", 
                            plain = system.file("fonts", "plex",
@@ -82,7 +84,6 @@ sfnts[grepl("([Pp]lex)|([Jj]et[Bb])", sfnts$family),c("family", "style", "italic
 systemfonts::match_font("IBM Plex Sans")
 ```
 
-## Plain plot
 
 ```{r}
 ggplot(mtcars, aes(mpg, wt)) +
