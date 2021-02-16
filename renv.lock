@@ -589,10 +589,10 @@
     },
     "ragg": {
       "Package": "ragg",
-      "Version": "0.4.0",
+      "Version": "1.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "34630c700bb331339a80ddc9c6821e25"
+      "Hash": "01f1614915f8061b023305c315b28cca"
     },
     "rappdirs": {
       "Package": "rappdirs",
@@ -755,10 +755,10 @@
     },
     "systemfonts": {
       "Package": "systemfonts",
-      "Version": "0.3.2",
+      "Version": "1.0.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "046e821d454edb3722192f588f4d7884"
+      "Hash": "6e899d7c097698d50ec87b1d8e65f246"
     },
     "testthat": {
       "Package": "testthat",
@@ -769,10 +769,10 @@
     },
     "textshaping": {
       "Package": "textshaping",
-      "Version": "0.2.1",
+      "Version": "0.3.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a34d4aa94ca91a52710b1c0c36bcded6"
+      "Hash": "08517f55a30f309465c722ebd83f7e10"
     },
     "tibble": {
       "Package": "tibble",
