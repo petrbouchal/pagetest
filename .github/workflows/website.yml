@@ -3,6 +3,8 @@ name: Render and Deploy RMarkdown Website
   push:
 jobs:
   build:
+    env:
+      RENV_PATHS_ROOT: ~/Library/Application Support/renv
     runs-on: macos-latest
     steps:
       - name: Checkout repo
@@ -27,12 +29,13 @@ jobs:
         with:
           pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
 
-      - name: Cache Renv packages
-        uses: actions/cache@v1
+      - name: Cache packages
+        uses: actions/cache@v2
         with:
-          path: $HOME/.local/share/renv
-          key: r-${{ hashFiles('renv.lock') }}
-          restore-keys: r-
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
       
       - name: install fonts and font system deps
         run: |
