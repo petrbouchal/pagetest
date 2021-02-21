@@ -75,6 +75,7 @@ sfnts[grepl("([Pp]lex)|([Jj]et[Bb])", sfnts$family),c("family", "style", "italic
 systemfonts::match_font("IBM Plex Sans")
 ```
 
+Hi there
 
 ```{r}
 ggplot(mtcars, aes(mpg, wt)) +
