@@ -615,14 +615,13 @@
       "Package": "ptrr",
       "Version": "0.2.0.9000",
       "Source": "GitHub",
-      "Remotes": "clauswilke/ggtext",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "ptrr",
       "RemoteUsername": "petrbouchal",
       "RemoteRef": "HEAD",
-      "RemoteSha": "bd2b1e9fcbb17c4217a75e704fbf41c3cd8bc8b1",
-      "Hash": "4ba2132af838b36f06866a4adf4e3be5"
+      "RemoteSha": "8a88496df54c5276cc0559256ae9095db43c4566",
+      "Hash": "9e0eec7d810960ee3ca60cf8ccd91b30"
     },
     "purrr": {
       "Package": "purrr",
