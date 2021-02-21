@@ -621,8 +621,8 @@
       "RemoteRepo": "ptrr",
       "RemoteUsername": "petrbouchal",
       "RemoteRef": "HEAD",
-      "RemoteSha": "8ebdc5a8ae97a68162721ade5e465ea15726edf9",
-      "Hash": "4c0a18a52b6f5054b510f7f96e074051"
+      "RemoteSha": "bd2b1e9fcbb17c4217a75e704fbf41c3cd8bc8b1",
+      "Hash": "4ba2132af838b36f06866a4adf4e3be5"
     },
     "purrr": {
       "Package": "purrr",
