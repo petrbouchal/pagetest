@@ -80,8 +80,8 @@ Hi there
 ```{r index-13}
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
-  theme(text = element_text(family = "xips"),
-        plot.title = element_text(family = "xipsc", face = "bold")) +
+  theme(text = element_text(family = "IBM Plex Sans Condensed"),
+        plot.title = element_text(family = "IBM Plex Sans", face = "bold")) +
   labs(title = "This is a title 1000999",
        subtitle = "This is a subtitle 1000999")
 ```
