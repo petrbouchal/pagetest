@@ -2,7 +2,7 @@
 title: "Testing systemfonts/ragg on Github Actions"
 ---
 
-```{r}
+```{r index-1}
 getwd()
 ```
 
@@ -18,14 +18,14 @@ knitr::opts_chunk$set(echo = T, warning = T, dev = "ragg_png")
 
 ## Without `register_font()`
 
-```{r}
+```{r index-2}
 Sys.info()
 ```
 
 
 
 
-```{r}
+```{r index-3}
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
   theme(text = element_text(family = "IBM Plex Sans"),
@@ -34,65 +34,65 @@ ggplot(mtcars, aes(mpg, wt)) +
        subtitle = "This is a subtitle 1000999")
 ```
 
-```{r}
+```{r index-4}
 sfnts <- systemfonts::system_fonts()
 ```
 
-```{r}
+```{r index-5}
 "hi"
 ```
 
-```{r}
+```{r index-6}
 sfnts
 ```
 
 ## Plain plot
 
-```{r}
-ptrr::register_plexsans("IBM Plex Sans", NULL)
-ptrr::register_plexsans_condensed("IBM Plex Sans Condensed", NULL)
+```{r index-7}
+ptrr::register_plexsans("xips", NULL)
+ptrr::register_plexsans_condensed("xipsc", NULL)
 ```
 
-```{r}
+```{r index-8}
 systemfonts::registry_fonts()
 ```
 
 
 
-```{r}
+```{r index-9}
 sfnts[grepl("([Pp]lex)|([Jj]et[Bb])", sfnts$family),c("family", "style", "italic", "monospace")]
 ```
 
 
-```{r}
+```{r index-10}
 3*4
 ```
 
-```{r}
+```{r index-11}
 ```
 
-```{r}
-systemfonts::match_font("IBM Plex Sans")
+```{r index-12}
+systemfonts::match_font("ips")
 ```
 
 Hi there
 
-```{r}
+```{r index-13}
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
-  theme(text = element_text(family = "IBM Plex Sans"),
-        plot.title = element_text(family = "IBM Plex Sans", face = "bold")) +
+  theme(text = element_text(family = "xips"),
+        plot.title = element_text(family = "xipsc", face = "bold")) +
   labs(title = "This is a title 1000999",
        subtitle = "This is a subtitle 1000999")
 ```
 
-```{r}
+```{r index-14}
 ptrr::set_ptrr_ggplot_fonts("IBM Plex Sans Condensed")
 ```
 
 ## Test set fonts in geoms
 
-```{r}
+```{r index-15}
 ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
   geom_text(aes(label = trans)) +
@@ -104,7 +104,7 @@ ggplot(mpg[1:10,], aes(cty, hwy)) +
 
 ## Test theme with fonts
 
-```{r}
+```{r index-16}
 ggplot(mpg[1:10,], aes(cty, hwy)) +
   geom_point() +
   geom_text(aes(label = trans)) +
