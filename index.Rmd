@@ -49,8 +49,8 @@ sfnts
 ## Plain plot
 
 ```{r index-7}
-ptrr::register_plexsans("xips", NULL)
-ptrr::register_plexsans_condensed("xipsc", NULL)
+ptrr::register_plexsans()
+ptrr::register_plexsans_condensed()
 ```
 
 ```{r index-8}
