@@ -49,8 +49,8 @@ sfnts
 ## Plain plot
 
 ```{r}
-ptrr::register_plexsans()
-ptrr::register_plexsans_condensed()
+ptrr::register_plexsans("IBM Plex Sans", NULL)
+ptrr::register_plexsans_condensed("IBM Plex Sans Condensed", NULL)
 ```
 
 ```{r}
