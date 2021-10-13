@@ -1,5 +1,5 @@
 ---
-title: "Testing systemfonts/ragg on Github Actions"
+title: "Testing systemfonts & ragg on Github Actions"
 ---
 
 ```{r index-1}
