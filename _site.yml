@@ -3,7 +3,7 @@ output_dir: docs
 include: ["demo.R"]
 exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock"]
 navbar:
-  title: "Basic Covid-19 overview for CZ"
+  title: "Font rendering test"
   right:
   - icon: fa-github fa-lg
     href: https://github.com/petrbouchal/pagetest

@@ -2,6 +2,11 @@
 title: "Testing systemfonts & ragg on Github Actions"
 ---
 
+```{r}
+Sys.time()
+```
+
+
 ```{r index-1}
 getwd()
 ```
