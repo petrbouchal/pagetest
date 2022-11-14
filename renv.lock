@@ -53,10 +53,10 @@
     },
     "RCurl": {
       "Package": "RCurl",
-      "Version": "1.98-1.2",
+      "Version": "1.98-1.9",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "cf29e1b71f8736960e0e851123a83e6f"
+      "Path": "/Users/petr/Library/Application Support/renv/binary/R-4.2/aarch64-apple-darwin20/repository/RCurl/RCurl_1.98-1.9.tgz"
     },
     "Rcpp": {
       "Package": "Rcpp",
@@ -95,10 +95,10 @@
     },
     "bitops": {
       "Package": "bitops",
-      "Version": "1.0-6",
+      "Version": "1.0-7",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0b118d5900596bae6c4d4865374536a6"
+      "Path": "/Users/petr/Library/Application Support/renv/cache/v5/R-4.2/aarch64-apple-darwin20/bitops/1.0-7/b7d8d8ee39869c18d8846a184dd8a1af/bitops"
     },
     "brew": {
       "Package": "brew",
