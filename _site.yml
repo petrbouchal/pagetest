@@ -1,4 +1,4 @@
-name: Covid-19 CZ
+name: Testing fonts
 output_dir: docs
 include: ["demo.R"]
 exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock"]
